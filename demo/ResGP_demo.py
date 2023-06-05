@@ -10,7 +10,7 @@ import numpy as np
 realpath=os.path.abspath(__file__)
 _sep = os.path.sep
 realpath = realpath.split(_sep)
-realpath = _sep.join(realpath[:realpath.index('ML_gp')+1])
+realpath = _sep.join(realpath[:realpath.index('MF-Fusion')+1])
 sys.path.append(realpath)
 
 
