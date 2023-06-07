@@ -89,6 +89,9 @@ def gp_model_block_test():
 
 
     # getting nonsubset dataset
+    shuffle_idx = torch.randperm(train_inputs[0].shape[0])
+    train_inputs[0] = train_inputs[0][shuffle_idx]
+    train_outputs[0] = train_outputs[0][shuffle_idx]
     yl_with_nonsubset = cigp_model_block.predict_with_detecing_subset([train_inputs[0]])
     yl_with_nonsubset[0].reg_func(torch.reshape, source_shape)
     train_inputs[1] = yl_with_nonsubset[0]

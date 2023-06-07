@@ -75,7 +75,7 @@ class GP_model_block(torch.nn.Module):
         src_inputs = self.gp_model.inputs_tr
         checker = Subset_check(src_inputs[0])
 
-        _, subset_index = checker.get_subset(gp_inputs[0])
+        subset_index, _ = checker.get_subset(gp_inputs[0])
         _, nonsubset_index = checker.get_non_subset(gp_inputs[0])
 
         subset_outputs = [_v[subset_index] for _v in self.gp_model.outputs_tr]
